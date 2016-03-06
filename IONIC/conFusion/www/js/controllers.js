@@ -211,17 +211,28 @@ angular.module('conFusion.controllers', [])
                     $ionicLoading.hide();
                 }, 1000);
             });
-    $scope.toggleDelete = function () {
-        $scope.shouldShowDelete = !$scope.shouldShowDelete;
-        console.log($scope.shouldShowDelete);
-    }
+        $scope.toggleDelete = function () {
+            $scope.shouldShowDelete = !$scope.shouldShowDelete;
+            console.log($scope.shouldShowDelete);
+        }
 
-    $scope.deleteFavorite = function (index) {
+        $scope.deleteFavorite = function (index) {
 
-        favoriteFactory.deleteFromFavorites(index);
-        $scope.shouldShowDelete = false;
+            var confirmPopup =$ionicPopup.confirm({
+                title: 'Confirm Delete',
+                template: 'Are you sure you want to delete this item?'
+            });
+            confirmPopup.then(function(res){
+                if(res){
+                    console.log('Ok to delete');
+                    favoriteFactory.deleteFromFavorites(index);
 
-    }
+                }else{
+                    console.log('Canceled delete');
+                }
+            });
+            $scope.shouldShowDelete=false;
+        }
 }])
 
 .filter('favoriteFilter', function () {
