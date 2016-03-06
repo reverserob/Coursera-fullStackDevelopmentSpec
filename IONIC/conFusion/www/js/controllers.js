@@ -189,6 +189,7 @@ angular.module('conFusion.controllers', [])
 }])
 
 .controller('FavoritesController', ['$scope', 'menuFactory', 'favoriteFactory', 'baseURL', '$ionicListDelegate', '$ionicPopup', '$ionicLoading', '$timeout', function ($scope, menuFactory, favoriteFactory, baseURL, $ionicListDelegate, $ionicPopup, $ionicLoading, $timeout) {
+
         $scope.baseURL = baseURL;
         $scope.shouldShowDelete = false;
 
@@ -214,7 +215,7 @@ angular.module('conFusion.controllers', [])
         $scope.toggleDelete = function () {
             $scope.shouldShowDelete = !$scope.shouldShowDelete;
             console.log($scope.shouldShowDelete);
-        }
+        };
 
         $scope.deleteFavorite = function (index) {
 
