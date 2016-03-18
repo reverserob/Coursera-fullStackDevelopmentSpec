@@ -1,0 +1,39 @@
+
+
+body{
+    text-align: left;
+    font-family: "sans-serif";
+}
+fieldset{
+    background-color: lightyellow ;
+    border: 10px solid yellow;
+    margin-bottom:10px;
+    width: 720px;
+
+}
+
+label {
+    width: 180px;
+    display: inline-block;
+    text-align: right;
+
+}
+label:hover { font-size:40px }
+
+input{
+    vertical-align: top;
+}
+input:hover{ font-size: 40px;}
+
+textarea{
+    width:360px;
+    height:50px;
+    vertical-align: top;
+}
+.range{
+    background-color: brown;
+    color: white;
+    padding: 3px;
+
+}
+

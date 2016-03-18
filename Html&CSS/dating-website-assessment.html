@@ -1,0 +1,119 @@
+<!-- Created by Roberta Randazzo 2016-->
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+    <meta name="author" content="Roberta Randazzo">
+    <meta name="description" content="Dating Website Assessment">
+    <meta charset="UTF-8">
+    <title>Dating Web Site Assessment</title>
+    <meta charset = "UTF-8" />
+</head>
+<body>
+<h1>Please Enter Your Details For Our Dating Website</h1>
+<form action="https://" method="post">
+
+    <fieldset>
+        <legend><h2> Your Face </h2></legend>
+        <p>
+            <label for="avatar"><strong> Your Image: </strong></label>
+            <input type='file' id ='avatar' name='avatar' required/>
+        </p>
+
+        <p>
+            <label for="preview"><strong>Image Preview: </strong></label>
+            <img id="preview" />
+        </p>
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend> <h2>Your General Details </h2></legend>
+        <p>
+            <label for="name"><strong> Name: </strong></label>
+            <input type = "text" id = "name" name="name" placeholder='Your Full Name' required/>
+        </p>
+        <p>
+        <label for="gender"><strong>Gender: </strong></label>
+            <!-- 1 required -->
+            <input type="radio" id="gender" name="gender" value="male"/> Male
+            <input type="radio" id="gender_f" name="gender" value="female"/> Female
+        </p>
+        <p>
+            <label for="age"><strong> Age: </strong></label>
+            <input type="number" id="age" name="age" value="age" required/>
+        </p>
+        <p>
+            <label for="bith"><strong> Date of birth: </strong></label>
+            <input type="date" id="bith" name="birthday" value="age"/>
+        </p>
+
+        <p>
+            <label for="color"><strong> Favorite color: </strong></label>
+            <input type="color" id="color" name="color" value="#ff00ff"/>
+        </p>
+
+        <p>
+            <label for="country"><strong> Which country: </strong></label>
+            <select id="country">
+                <option name="country" value="usa">USA</option>
+                <option name="country" value="nz">New Zealand</option>
+                <option name="country" value="au">Australia</option>
+                <option name="country" value="uk">UK</option>
+                <option name="country" value="uk">China</option>
+                <option name="country" value="uk">Japan</option>
+            </select>
+        </p>
+
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend for="indicators"> <h2> Your Indicators </h2> </legend>
+        <p>
+            <label for="height"><strong>Height: </strong></label> <span class="range">Short</span>
+            <input type="range" id ="height" min="1" max="100" step="10"  name="height"/> <span class="range">Tall</span>
+        </p>
+
+        <p>
+            <label for="salary"><strong>Salary: </strong></label> <span class="range">Poor</span>
+            <input type="range" id ="salary" min="1" max="100" step="10" name="salary" /> <span class="range">Rich</span>
+        </p>
+
+    </fieldset>
+
+    <br>
+
+     <fieldset>
+         <legend for="info"><h2> Your Contact Information </h2></legend>
+
+         <p>
+             <label for="email"><strong>Email: </strong>  </label>
+             <input type="email" id="email" name="email" />
+         </p>
+
+         <p>
+             <label for="mobile"> <strong>Mobile: </strong></label>
+             <input type="number" id="mobile" name="mobile" />
+         </p>
+
+         <p>
+            <label for="address"><strong>Address: </strong></label>
+            <textarea id = "address" rows = "3" cols = "30" name="address"></textarea>
+         </p>
+        <p>
+         <label for="contact" ><strong>Method to contact you: </strong></label>
+         <input type="radio" id="contact" name="method" value="email"/> Email
+         <input type="radio" id="contact_email" name="method" value="whatsapp"/> Whatsapp
+         <input type="radio" id="contact_chat" name="method" value="in_app_chat"/> In-App-Chat
+         </p>
+
+    </fieldset>
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>
