@@ -1,0 +1,19 @@
+<!--
+<ion-list>
+    <ion-item>
+        <ion-item ng-click="addFavorite({{dish.id}})">Add to Favorites</ion-item>
+        <ion-item >Add Comment</ion-item>
+    </ion-item>
+</ion-list>
+-->
+<script id="dish-detail-popover.html" type="text/ng-template">
+    <ion-popover-view>
+        <ion-list>
+            <ion-item>
+                <ion-item ng-controller="MenuController"
+                          ng-click="addFavorite({{dish.id}})">Add to Favorites</ion-item>
+                <ion-item >Add Comment</ion-item>
+            </ion-item>
+        </ion-list>
+    </ion-popover-view>
+</script>
