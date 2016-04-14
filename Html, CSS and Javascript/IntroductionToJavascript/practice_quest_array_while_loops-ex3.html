@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var high_quality=true;
+    var cheap=false;
+    var will_purchase=true;
+
+    will_purchase1 = (high_quality & !cheap) || (!high_quality && cheap);
+    console.log(will_purchase1);
+
+    will_purchase2 = (high_quality && !cheap) || cheap;
+    console.log(will_purchase2);
+
+    will_purchase3 = (high_quality && cheap) || !cheap;
+    console.log(will_purchase3);
+
+    will_purchase4 = high_quality || (!high_quality && cheap);
+    console.log(will_purchase4);
+
+
+
+</script>
+
+</body>
+</html>
