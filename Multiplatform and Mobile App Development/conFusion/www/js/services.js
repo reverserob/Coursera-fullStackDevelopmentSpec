@@ -1,8 +1,7 @@
 'use strict';
 
-angular.module('conFusion.services',['ngResource'])
+angular.module('conFusion.services', ['ngResource'])
     .constant("baseURL","http://localhost:3000/")
-
     .service('menuFactory', ['$resource', 'baseURL', function($resource,baseURL) {
 
         var promotions = [
@@ -33,17 +32,11 @@ angular.module('conFusion.services',['ngResource'])
     }])
 
     .factory('corporateFactory', ['$resource', 'baseURL', function($resource,baseURL) {
-
-
         return $resource(baseURL+"leadership/:id");
-
     }])
 
     .factory('feedbackFactory', ['$resource', 'baseURL', function($resource,baseURL) {
-
-
         return $resource(baseURL+"feedback/:id");
-
     }])
 
     .factory('favoriteFactory', ['$resource', 'baseURL', function ($resource, baseURL) {
@@ -57,6 +50,7 @@ angular.module('conFusion.services',['ngResource'])
             }
             favorites.push({id: index});
         };
+
         favFac.deleteFromFavorites = function (index) {
             for (var i = 0; i < favorites.length; i++) {
                 if (favorites[i].id == index) {

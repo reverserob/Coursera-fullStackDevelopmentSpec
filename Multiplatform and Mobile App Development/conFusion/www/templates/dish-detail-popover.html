@@ -1,19 +1,15 @@
-<!--
-<ion-list>
-    <ion-item>
-        <ion-item ng-click="addFavorite({{dish.id}})">Add to Favorites</ion-item>
-        <ion-item >Add Comment</ion-item>
-    </ion-item>
-</ion-list>
--->
-<script id="dish-detail-popover.html" type="text/ng-template">
-    <ion-popover-view>
-        <ion-list>
-            <ion-item>
-                <ion-item ng-controller="MenuController"
-                          ng-click="addFavorite({{dish.id}})">Add to Favorites</ion-item>
-                <ion-item >Add Comment</ion-item>
-            </ion-item>
-        </ion-list>
-    </ion-popover-view>
-</script>
+<ion-popover-view>
+    <!--
+    <ion-header-bar>
+        <h1 class="title">Options</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closePopover()">Close</button>
+        </div>
+    </ion-header-bar>
+    -->
+    <ion-content>
+        <button class="button button-full " ng-click="addFavorite(dish.id)">Add to Favorites</button>
+        <button class="button button-full " ng-click="openCommentModal()">Add Comment</button>
+    </ion-content>
+</ion-popover-view>
+
