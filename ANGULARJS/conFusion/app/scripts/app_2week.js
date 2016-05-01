@@ -153,25 +153,30 @@ angular.module('confusionApp', [])
 
         $scope.dish = dish;
 
+        $scope.comment = {author: "", rating: 5, comment: "", date: new Date().toISOString()};
+
     }])
 
     .controller('DishCommentController', ['$scope', function($scope) {
 
         //Step 1: Create a JavaScript object to hold the comment from the form
-        $scope.comment = {rating:"", comment: "",author:"",date:""};
-        $scope.comment.rating = 5;
-
-        $scope.selectRating = function(setRating) {
-            $scope.comment.rating = setRating;
-        };
 
         $scope.submitComment = function () {
+            console.log($scope.comment);
 
+            //Step 2: This is how you record the date
             $scope.comment.date = new Date().toISOString();
+
+            // Step 3: Push your comment into the dish's comment array
             $scope.dish.comments.push($scope.comment);
+
+            //Step 4: reset your form to pristine
             $scope.commentForm.$setPristine();
-            $scope.comment = {rating:"", comment: "",author:"",date:""};
-        }
+
+            //Step 5: reset your JavaScript object that holds your comment
+            $scope.comment = {author: "", rating: 5, comment: "", date: new Date().toISOString()};
+            console.log($scope.comment);
+        };
     }])
 
 ;
