@@ -1,0 +1,126 @@
+
+Copy and paste the code showing the implementation of the getLeaders and the getLeader functions in services.js in the text box below
+        var corpFac = {};
+
+        corpFac.getLeaders = function() {
+            return leadership;
+        };
+        corpFac.getLeader = function(index) {
+            return leadership[index];
+        };
+
+        return corpFac;
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Copy and paste the code for the getPromotion function in the text box below:
+        menuFac.getPromotion = function(index){
+            return promotions[index];
+        };
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Copy and paste the code for the IndexController function in the text box below:
+    .controller('IndexController', ['$scope', 'menuFactory', 'corporateFactory', function($scope, menuFactory, corporateFactory){
+        $scope.featured = menuFactory.getDish(0);
+        $scope.promotion = menuFactory.getPromotion(0);
+        $scope.ec = corporateFactory.getLeader(3);
+    }])
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+Copy and paste the code for the AboutController function in the text box below:
+    .controller('AboutController', ['$scope', 'corporateFactory', function($scope, corporateFactory){
+        $scope.leaders = corporateFactory.getLeaders();
+    }])
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+Copy and paste the code from aboutus.html that constructs the information for the corporate leaders, in the text box below:
+            <ul class="media-list">
+                <!-- CORPORATE LEADERS LIST -->
+                <li class="media" ng-repeat="leader in leaders">
+                    <div class="media-left media-middle">
+                        <img alt="Leader picture" class="media-object img-thumbnail" ng-src="{{leader.image}}">
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">
+                                {{leader.name}}
+                            <small>
+                                {{leader.designation}}
+                            </small>
+                            </h2>
+                        <p>{{leader.description}}</p>
+                    </div>
+                </li>
+            </ul>
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Copy and paste the code (the media objects) from home.html that constructs the information for the featured dish, featured promotion and executive chef , in the text box below:
+
+    <div class="container" ng-controller="IndexController">
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Our Lipsmacking Culinary Creations</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+            <p style="padding:20px;"></p>
+				<div class="media">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.menu.dishdetails({id: featured._id})">
+                            <img alt="{{featured.name}}" class="media-object img-thumbnail" ng-src="{{featured.image}}"></a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{featured.name}} <span class="label label-danger label-xs">{{featured.label}}</span> <span class="badge">{{featured.price | currency}}</span></h2>
+                        <p>{{featured.description}}}</p>
+                        <p><a href="#" class="btn btn-primary btn-xs">More &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3">
+                <p style="padding:20px;"></p>
+                <h3 align=center>This Month's Promotions</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9">
+				<div class="media">
+                    <div class="media-body">
+                        <h2 class="media-heading">{{promotion.name}} <span class="label label-danger">{{promotion.label}}</span><span class="badge">{{promotion.price | currency}}</span></h2>
+                        <p>{{promotion.description}}</p>
+                        <p><a class="btn btn-primary btn-xs" href="#">More &raquo;</a></p>
+                    </div>
+                    <div class="media-right media-middle">
+                        <a ui-sref="app.menu.dishdetails({id: featured._id})"><img ng-src="{{promotion.image}}" alt="{{promotion.name}}" class="media-object img-thumbnail"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row row-content">
+            <div class="col-xs-12 col-sm-3 col-sm-push-9">
+                <p style="padding:20px;"></p>
+                <h3 align=center>Meet our Culinary Specialists</h3>
+            </div>
+            <div class="col-xs-12 col-sm-9 col-sm-pull-3">
+				<div class="media">
+                    <div class="media-left media-middle">
+                        <a ui-sref="app.aboutus">
+                            <img alt="{{ec.name}}" class="media-object img-thumbnail" ng-src="{{ec.image}}"></a>
+                    </div>
+                    <div class="media-body">
+                        <h2 class="media-heading">{{ec.name}} <small>{{ec.designation}}</small></h2>
+                        <p>{{ec.description}}}</p>
+                        <p><a href="#" class="btn btn-primary btn-xs">More &raquo;</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -104,6 +104,4 @@ angular.module('confusionApp')
         $scope.leaders = corporateFactory.getLeaders();
     }])
 
-;/**
- * Created by robertarandazzo on 01/05/16.
- */
+;
